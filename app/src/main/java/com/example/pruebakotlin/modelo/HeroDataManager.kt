@@ -7,7 +7,12 @@ class HeroDataManager(context: Context) {
     private var dbManager:HeroDBManager
 
     init {
-        dbManager = HeroDBManager(HeroDB.getDB(context).getHeroDAO())
+        dbManager = HeroDBManager(HeroDB.getDB(context).getHeroDAO(), context)
+        dbManager.updateAndSaveHeroListFromApiToDB()
+    }
+
+    fun getHeroDBManager():HeroDBManager{
+        return dbManager
     }
 
 }

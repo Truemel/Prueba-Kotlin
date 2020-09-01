@@ -24,4 +24,8 @@ class HeroViewModel(application: Application) : AndroidViewModel(application) {
     fun insertHero(hero:SuperheroCharacter) = viewModelScope.launch { heroDBManager.insertHero(hero) }
 
     fun updateHero(hero: SuperheroCharacter) = viewModelScope.launch { heroDBManager.updateHero(hero) }
+
+    fun getHeroList():LiveData<MutableList<SuperheroCharacter>>{
+        return heroList
+    }
 }

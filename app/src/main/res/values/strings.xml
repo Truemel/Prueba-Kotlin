@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Prueba Kotlin</string>
+    <string name="goBa">Go Back</string>
 </resources>

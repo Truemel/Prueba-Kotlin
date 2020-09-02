@@ -11,7 +11,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toTopOf="@id/detImage"
+        android:layout_marginTop="10dp"
         android:textSize="25sp"
         android:textAlignment="center"
         android:textStyle="bold"/>
@@ -20,10 +21,12 @@
         android:id="@+id/detImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:maxHeight="300dp"
         app:layout_constraintTop_toBottomOf="@id/detName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="50dp"/>
+        app:layout_constraintBottom_toTopOf="@id/detSlug"
+        android:layout_marginTop="10dp"/>
 
     <TextView
         android:id="@+id/detSlug"
@@ -32,7 +35,8 @@
         app:layout_constraintTop_toBottomOf="@id/detImage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toTopOf="@id/detButton"
+        android:layout_marginTop="10dp"
         android:textStyle="bold"
         android:textSize="20sp"
         android:textAlignment="center"/>
@@ -44,7 +48,8 @@
         app:layout_constraintTop_toBottomOf="@id/detSlug"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="10dp"
         android:text="@string/goBa"
         android:textSize="18sp"
         android:textStyle="bold"

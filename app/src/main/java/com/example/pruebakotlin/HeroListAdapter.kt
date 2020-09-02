@@ -1,6 +1,7 @@
 package com.example.pruebakotlin
 
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -49,7 +50,9 @@ class HeroListAdapter(var list:MutableList<SuperheroCharacter>, var context: Con
     override fun onClick(v: View?) {
         if (v != null) {
             val frag:HeroDetailsFragment = HeroDetailsFragment()
-            frag.arguments!!.putString("hero", Gson().toJson(v.tag as SuperheroCharacter))
+            var bundle:Bundle = Bundle()
+            bundle.putString("hero", Gson().toJson(v.tag as SuperheroCharacter))
+            frag.arguments = bundle
             (context as MainActivity).changeFragment(frag)
         }
     }

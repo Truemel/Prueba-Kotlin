@@ -30,7 +30,8 @@ class HeroListFragment() : Fragment() {
         val view:View = inflater.inflate(R.layout.hero_list_fragment_layout, container, false)
         listView = view.recyclerV
         listView.layoutManager = LinearLayoutManager(context)
-        viewModel.getHeroList().observe(context as MainActivity, Observer { listView.adapter = HeroListAdapter(it, context as MainActivity) })
+        listView.adapter = HeroListAdapter(mutableListOf(), context as MainActivity)
+        viewModel.getHeroList().observe(context as MainActivity, Observer { (listView.adapter as HeroListAdapter).updateList(it) })
 
         return view
     }
